@@ -32,13 +32,13 @@ export const verifyToken = async (req, res, next) => {
                 case 'TokenExpiredError':
                     return errorResponse(res, constantsError.ERROR_TOKEN_EXPIRED_CODE);
                 default:
-                    return errorResponse500(res, error, 'verifyToken', config.LOG_ERRORS);
+                    errorResponse500(res, error);
             }
         }
         
         next();
     } catch (error) {
-        errorResponse500(res, error, 'verifyToken', config.LOG_ERRORS);
+        errorResponse500(res, error);
     }
 };
 
@@ -65,7 +65,7 @@ export const verifyTokenCode = async (req, res, next) => {
                 case 'TokenExpiredError':
                     return errorResponse(res, constantsError.ERROR_TOKEN_EXPIRED_CODE);
                 default:
-                    return errorResponse500(res, error, 'verifyTokenCode', config.LOG_ERRORS);
+                    errorResponse500(res, error);
             }
         }
 
@@ -77,6 +77,6 @@ export const verifyTokenCode = async (req, res, next) => {
         req.user = user;
         next();
     } catch (error) {
-        errorResponse500(res, error, 'verifyTokenCode', config.LOG_ERRORS);
+        errorResponse500(res, error);
     }
 };

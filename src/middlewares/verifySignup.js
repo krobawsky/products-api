@@ -20,7 +20,7 @@ const checkDuplicateUsername = async (req, res, next) => {
     }
     next();
   } catch (error) {
-    errorResponse500(res, error, 'checkDuplicateUsername', config.LOG_ERRORS)
+    errorResponse500(res, error);
   }
 };
 

@@ -134,7 +134,7 @@ const getError = (code) => {
 
 };
 
-const errorResponse = async (res, code, functionName = "", title = "Error") => {
+const errorResponse = async (res, code, title = "Error") => {
 
     const error = getError(code);
 
@@ -148,7 +148,7 @@ const errorResponse = async (res, code, functionName = "", title = "Error") => {
 
 };
 
-const errorResponseWithReplace = async (res, code, replace, functionName = "", title = "Error") => {
+const errorResponseWithReplace = async (res, code, replace, title = "Error") => {
 
     var error = getError(code);
     replace.forEach(function (element, index) {
@@ -165,7 +165,7 @@ const errorResponseWithReplace = async (res, code, replace, functionName = "", t
 
 };
 
-const errorResponse500 = async (res, error, functionName = "", title = "Error") => {
+const errorResponse500 = async (res, error, title = "Error") => {
 
     return res.status(500).json({
         error: {

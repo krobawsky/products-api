@@ -89,25 +89,6 @@ const successResponse = async (res, code, data = {}, title = "Success") => {
 
 };
 
-const successResponseWithReplace = async (res, code, replace, data = {}, title = "Success") => {
-
-    const success = getSucces(code);
-    replace.forEach(function (element, index) {
-        success.message = success.message.replace('{' + index + '}', element);
-    });
-
-    return res.status(success.htttpCode).json({
-        success: {
-            code: code,
-            message: success.message,
-            title: title
-        },
-        data: data
-    });
-
-};
-
 export {
-    successResponse,
-    successResponseWithReplace
+    successResponse
 };

@@ -44,7 +44,7 @@ export const signUp = async (req, res = response) => {
             user: newUser
         });
     } catch (error) {
-        errorResponse500(res, error, 'signUp');
+      errorResponse500(res, error);
     }
 };
 
@@ -82,7 +82,7 @@ export const signIn = async (req, res = response) => {
         });
 
     } catch (error) {
-        errorResponse500(res, error, 'signIn');
+      errorResponse500(res, error);
     }
 };
 

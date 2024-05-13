@@ -18,7 +18,7 @@ import {
 
 export async function getProducts(req, res = response) {
   try {
-    const product = await Product.findAll();
+    const product = await Product.findAll({order: [['id', 'DESC']]});
     res.json(product);
   } catch (error) {
     errorResponse500(res, error);
@@ -52,12 +52,12 @@ export async function createProduct(req, res = response) {
 export async function getProduct(req, res = response) {
   const { id } = req.params;
   try {
-    const Product = await Product.findOne({
+    const product = await Product.findOne({
       where: {
         id,
       },
     });
-    res.json(Product);
+    res.json(product);
   } catch (error) {
     errorResponse500(res, error);
   }

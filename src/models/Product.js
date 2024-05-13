@@ -11,8 +11,7 @@ export const Product = sequelize.define(
       autoIncrement: true,
     },
     handle: {
-      type: DataTypes.STRING,
-      primaryKey: true,
+      type: DataTypes.STRING
     },
     title: {
       type: DataTypes.STRING,
@@ -37,7 +36,7 @@ export const Product = sequelize.define(
     },
     barcode: {
       type: DataTypes.BIGINT,
-    }
+    },
   },
   {
     timestamps: false,

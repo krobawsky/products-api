@@ -1,11 +1,12 @@
 import Sequelize from "sequelize";
+import config from "../config.js";
 
 export const sequelize = new Sequelize(
-  "haciendoladb", // db name,
-  "postgres", // username
-  "awdr", // password
+  config.PG_DB_NAME,
+  config.PG_DB_USER,
+  config.PG_DB_PASSWORD,
   {
-    host: "localhost",
+    host: config.PG_DB_HOST,
     dialect: "postgres",
     // pool: {
     //   max: 5,

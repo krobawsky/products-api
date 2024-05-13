@@ -1,8 +1,11 @@
 
 export default {
-  MONGODB_URI: process.env.MONGODB_URI || "mongodb://localhost/services",
-  PORT: process.env.PORT || 3000,
+  PG_DB_HOST: "localhost",
+  PG_DB_NAME: "haciendoladb",
+  PG_DB_USER: "postgres",
+  PG_DB_PASSWORD: "awdr",
 
+  PORT: process.env.PORT || 3000,
   SECRET: 'haciendola-api',
   TOKEN_SESSION: 'x-access-token',
   TOKEN_SESSION_LIVE: 86400, // 24 hours
